@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Generator</title>
+    <p>LSTM Neural Network Music Generator</p>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Tone.js for browser MIDI Synthesis (Local copy) -->
+    <script src="{{ url_for('static', filename='js/tone.js') }}"></script>
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow-orb glow-purple"></div>
+        <div class="glow-orb glow-blue"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="logo-area">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <div class="logo-text">
+                    <h1>AI Music Generator</h1>
+                    <p>Deep Learning MIDI Melody Generator</p>
+                </div>
+            </div>
+            <div class="system-status">
+                <span class="status-label"><i class="fa-solid fa-circle-check"></i> System Operational</span>
+            </div>
+        </header>
+
+        <!-- Main Split Dashboard Grid -->
+        <main class="dashboard-grid-split">
+            
+            <!-- LEFT COLUMN: TRAINING SECTION -->
+            <div class="dashboard-col training-col">
+                
+                <!-- Panel 1: Dataset Management -->
+                <section class="panel panel-dataset">
+                    <h2><i class="fa-solid fa-database"></i> 1. Live Training Dataset</h2>
+                    
+                    <!-- Preprocessing Stats Row -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <span class="stat-title">Dataset Size</span>
+                            <span id="stat-files" class="stat-value">-</span>
+                            <span class="stat-sub">MIDI files in data/raw</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-title">Patterns Generated</span>
+                            <span id="stat-sequences" class="stat-value">-</span>
+                            <span class="stat-sub">Training sequences</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-title">Hardware Mode</span>
+                            <span id="stat-gpu" class="stat-value">-</span>
+                            <span class="stat-sub" id="stat-gpu-sub">Checking GPU...</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Drag and Drop Zone -->
+                    <div id="dropzone" class="upload-dropzone">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <p class="upload-text">Drag & Drop MIDI Files Here</p>
+                        <span class="upload-sub">or click to upload custom MIDI files</span>
+                        <input type="file" id="file-input" multiple accept=".mid,.midi" style="display: none;">
+                    </div>
+                    <div id="uploaded-files-list" class="uploaded-files-list"></div>
+                </section>
+                
+                <!-- Panel 2: Training Controller -->
+                <section class="panel panel-training-control">
+                    <h2><i class="fa-solid fa-microchip"></i> 2. Model Training Configuration</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="epochs-input">Training Epochs</label>
+                            <input type="number" id="epochs-input" min="1" max="100" value="5" class="form-control">
+                            <p class="field-help">Quick test: 5-10. High quality: 50+</p>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="batch-input">Batch Size</label>
+                            <input type="number" id="batch-input" min="16" max="256" step="16" value="64" class="form-control">
+                            <p class="field-help">Power-of-two (e.g. 64)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="reparse-checkbox" class="form-check-input">
+                        <label for="reparse-checkbox" class="form-check-label">Force Reparse MIDI Dataset</label>
+                    </div>
+                    
+                    <button id="train-btn" class="btn btn-secondary btn-full" onclick="startTraining()">
+                        <i class="fa-solid fa-dumbbell"></i> Start Live Training
+                    </button>
+                    
+                    <!-- Active Training Progress -->
+                    <div id="training-progress-panel" class="training-progress-panel" style="display: none; margin-top: 1.5rem;">
+                        <div class="progress-info-row">
+                            <span id="training-step-text">Epoch 0/0</span>
+                            <span id="training-pct-text">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="training-progress-bar" class="training-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="training-metrics-row">
+                            <span>Loss: <strong id="train-metric-loss">-</strong></span>
+                            <span>Acc: <strong id="train-metric-acc">-</strong></span>
+                            <span>Val Loss: <strong id="train-metric-val-loss">-</strong></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Panel 3: Live Console Logs -->
+                <section class="panel panel-logs">
+                    <h2><i class="fa-solid fa-terminal"></i> 3. Preprocessing & Training Console</h2>
+                    <div class="console-log">
+                        <div id="console-output" class="console-body">
+                            <div class="log-line log-system">[system] Ready. Upload MIDI files and click Start Live Training.</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- RIGHT COLUMN: GENERATION SECTION -->
+            <div class="dashboard-col generation-col">
+                
+                <!-- Panel 1: Generation Configuration -->
+                <section class="panel panel-generation-control">
+                    <h2><i class="fa-solid fa-sliders"></i> 1. Generation Parameters</h2>
+                    
+                    <div class="form-group">
+                        <label for="temp-slider">
+                            <span>Temperature (Creativity)</span>
+                            <span id="temp-val" class="field-val">0.8</span>
+                        </label>
+                        <input type="range" id="temp-slider" min="0.1" max="1.5" step="0.05" value="0.8">
+                        <div class="slider-labels">
+                            <span>Conservative (Bach)</span>
+                            <span>Creative (Experimental)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="bpm-slider">
+                                <span>Tempo (BPM)</span>
+                                <span id="bpm-val" class="field-val">120</span>
+                            </label>
+                            <input type="range" id="bpm-slider" min="60" max="200" step="5" value="120">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="length-slider">
+                                <span>Generation Length (Notes)</span>
+                                <span id="length-val" class="field-val">200</span>
+                            </label>
+                            <input type="range" id="length-slider" min="50" max="500" step="10" value="200">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="synth-select">Synthesizer Voice</label>
+                        <select id="synth-select" class="form-select">
+                            <option value="piano">Acoustic Grand Piano (PolySynth)</option>
+                            <option value="synth-pluck">Cosmic Synth Pluck</option>
+                            <option value="fm-chimes">FM Crystal Chimes</option>
+                        </select>
+                    </div>
+                    
+                    <button id="generate-btn" class="btn btn-primary btn-full" onclick="generateMusic()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate New MIDI Melody
+                    </button>
+                </section>
+                
+                <!-- Panel 2: Musical Canvas & Playback -->
+                <section class="panel panel-visualizer">
+                    <div class="panel-header-buttons">
+                        <h2><i class="fa-solid fa-music"></i> 2. Generated Musical Canvas</h2>
+                        <a id="download-midi-btn" class="btn btn-small btn-disabled" href="#" download>
+                            <i class="fa-solid fa-download"></i> Download MIDI
+                        </a>
+                    </div>
+                    
+                    <!-- Canvas Visualization Area -->
+                    <div class="canvas-container">
+                        <canvas id="piano-roll-canvas"></canvas>
+                        <div id="canvas-placeholder" class="canvas-placeholder">
+                            <i class="fa-solid fa-wave-square placeholder-icon"></i>
+                            <p>No melody generated yet. Click "Generate New MIDI Melody" to render the piano-roll.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Playback Controls -->
+                    <div class="playback-controls">
+                        <button id="play-btn" class="btn btn-circle btn-disabled" onclick="togglePlayback()" disabled>
+                            <i id="play-icon" class="fa-solid fa-play"></i>
+                        </button>
+                        <button id="stop-btn" class="btn btn-circle btn-disabled" onclick="stopPlayback()" disabled>
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                        <div class="playback-info">
+                            <span id="playback-status">Ready</span>
+                            <div class="progress-bar-container">
+                                <div id="playback-progress" class="playback-progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Panel 3: Convergence Curves -->
+                <section class="panel panel-history-chart" id="history-chart-panel" style="display: none;">
+                    <h2><i class="fa-solid fa-chart-line"></i> 3. Training Convergence Curves</h2>
+                    <div class="chart-container">
+                        <img id="training-chart-img" src="" alt="Training History Curves">
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>Designed with <i class="fa-solid fa-heart footer-heart"></i> BUILD by AI ENGINEERS.</p>
+        </footer>
+    </div>
+
+    <!-- Script Entry -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

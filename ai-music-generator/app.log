@@ -1,0 +1,872 @@
+[2026-05-20 09:55:47] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 09:55:50] INFO [ai_music_gen.run_tests:20] Discovering and running automated unit tests...
+[2026-05-20 09:55:50] INFO [ai_music_gen.create_lstm_model:85] Creating Simulated Markov Chain model (TensorFlow not available).
+[2026-05-20 09:55:50] INFO [ai_music_gen.prepare_sequences:52] Created 7 input-output training patterns.
+[2026-05-20 09:55:50] INFO [ai_music_gen.prepare_sequences:62] Network input shape: (7, 3, 1)
+[2026-05-20 09:55:50] INFO [ai_music_gen.prepare_sequences:63] Network output shape: (7, 5)
+[2026-05-20 09:55:59] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 09:55:59] WARNING [ai_music_gen.check_gpu:56] TensorFlow is not installed. Running in Simulation Mode (CPU).
+[2026-05-20 09:55:59] INFO [ai_music_gen.train_model:29] Starting training run: epochs=5, batch_size=64
+[2026-05-20 09:55:59] INFO [ai_music_gen.populate_sample_dataset:76] No MIDI files found in data/raw. Extracting classical chorales from music21 corpus...
+[2026-05-20 09:56:03] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_01.mid to data/raw/
+[2026-05-20 09:56:03] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_02.mid to data/raw/
+[2026-05-20 09:56:03] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_03.mid to data/raw/
+[2026-05-20 09:56:04] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_04.mid to data/raw/
+[2026-05-20 09:56:04] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_05.mid to data/raw/
+[2026-05-20 09:56:05] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_06.mid to data/raw/
+[2026-05-20 09:56:05] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_07.mid to data/raw/
+[2026-05-20 09:56:06] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_08.mid to data/raw/
+[2026-05-20 09:56:06] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_09.mid to data/raw/
+[2026-05-20 09:56:06] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_10.mid to data/raw/
+[2026-05-20 09:56:07] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_11.mid to data/raw/
+[2026-05-20 09:56:07] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_12.mid to data/raw/
+[2026-05-20 09:56:08] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_13.mid to data/raw/
+[2026-05-20 09:56:08] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_14.mid to data/raw/
+[2026-05-20 09:56:09] INFO [ai_music_gen.populate_sample_dataset:102] Saved bach_chorale_15.mid to data/raw/
+[2026-05-20 09:56:09] INFO [ai_music_gen.populate_sample_dataset:106] Successfully extracted 15 MIDI files for training.
+[2026-05-20 09:56:09] INFO [ai_music_gen.parse_midi_dataset:72] Parsing 15 MIDI files...
+[2026-05-20 09:56:14] INFO [ai_music_gen.parse_midi_dataset:101] Saved notes cache of 509 tokens and 29 unique vocabulary to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\processed\notes_processed.pkl
+[2026-05-20 09:56:14] INFO [ai_music_gen.prepare_sequences:52] Created 445 input-output training patterns.
+[2026-05-20 09:56:14] INFO [ai_music_gen.prepare_sequences:62] Network input shape: (445, 64, 1)
+[2026-05-20 09:56:14] INFO [ai_music_gen.prepare_sequences:63] Network output shape: (445, 29)
+[2026-05-20 09:56:14] INFO [ai_music_gen.save_pickle:115] Saved cache to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\processed\vocab_mapping.pkl
+[2026-05-20 09:56:14] WARNING [ai_music_gen.train_model:63] TensorFlow is unavailable. Training Simulated Markov Chain model...
+[2026-05-20 09:56:14] INFO [ai_music_gen.train_on_patterns:31] Training Markov Chain simulated transition model...
+[2026-05-20 09:56:14] INFO [ai_music_gen.train_on_patterns:49] Markov Chain trained. Recorded transition states for 29 unique notes.
+[2026-05-20 09:56:14] INFO [ai_music_gen.save:77] Saved simulated model pickle to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-20 09:56:14] INFO [ai_music_gen.plot_history:181] Saved training history visualization to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\training_history.png
+[2026-05-20 09:56:14] INFO [ai_music_gen.train_model:90] Simulated Model training completed successfully.
+[2026-05-20 09:56:32] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 09:56:32] INFO [ai_music_gen.load_trained_model:128] Loading model from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-20 09:56:32] INFO [ai_music_gen.load_trained_model:131] TensorFlow missing. Attempting to load as Simulated Model pickle...
+[2026-05-20 09:56:32] INFO [ai_music_gen.load_trained_model:135] Simulated Model loaded successfully.
+[2026-05-20 09:56:32] INFO [ai_music_gen.generate_notes_list:50] No seed sequence provided. Loading random seed from training notes cache...
+[2026-05-20 09:56:32] INFO [ai_music_gen.generate_notes_list:65] Generating 100 notes using temperature 0.8...
+[2026-05-20 09:56:32] INFO [ai_music_gen.notes_to_midi:113] Converting notes list (length 100) to MIDI stream at 100 BPM...
+[2026-05-20 09:56:32] ERROR [ai_music_gen.notes_to_midi:164] Failed to write MIDI file: module 'music21.stream' has no attribute 'write'
+[2026-05-20 09:56:32] ERROR [ai_music_gen.main:112] Fatal error executing command 'generate': module 'music21.stream' has no attribute 'write'
+[2026-05-20 09:56:32] ERROR [ai_music_gen.main:114] Traceback (most recent call last):
+  File "main.py", line 93, in main
+    bpm=args.bpm
+  File "C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\src\generate.py", line 202, in run_generation
+    saved_path = notes_to_midi(notes, output_filename=output_filename, bpm=bpm)
+  File "C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\src\generate.py", line 165, in notes_to_midi
+    raise e
+  File "C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\src\generate.py", line 160, in notes_to_midi
+    mf = stream.write(midi_stream, fmt='midi', fp=str(output_filename))
+AttributeError: module 'music21.stream' has no attribute 'write'
+
+[2026-05-20 09:56:48] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 09:56:48] INFO [ai_music_gen.load_trained_model:128] Loading model from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-20 09:56:48] INFO [ai_music_gen.load_trained_model:131] TensorFlow missing. Attempting to load as Simulated Model pickle...
+[2026-05-20 09:56:48] INFO [ai_music_gen.load_trained_model:135] Simulated Model loaded successfully.
+[2026-05-20 09:56:48] INFO [ai_music_gen.generate_notes_list:50] No seed sequence provided. Loading random seed from training notes cache...
+[2026-05-20 09:56:48] INFO [ai_music_gen.generate_notes_list:65] Generating 100 notes using temperature 0.8...
+[2026-05-20 09:56:48] INFO [ai_music_gen.notes_to_midi:113] Converting notes list (length 100) to MIDI stream at 100 BPM...
+[2026-05-20 09:56:48] INFO [ai_music_gen.notes_to_midi:161] Successfully saved MIDI to outputs\generated_bach.mid
+[2026-05-20 09:56:48] INFO [ai_music_gen.plot_piano_roll:22] Generating piano-roll visualization for outputs\generated_bach.mid...
+[2026-05-20 09:56:49] INFO [ai_music_gen.plot_piano_roll:127] Saved piano-roll visualization to outputs\generated_bach.png
+[2026-05-20 10:00:06] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 10:00:07] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:00:07] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:00:08] WARNING [ai_music_gen.<module>:15] TensorFlow/Keras is not installed. System will use Simulated Model (Markov Chain transition model).
+[2026-05-20 10:00:09] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:00:09] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:35:20] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:35:20] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:35:27] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:35:27] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:37:38] INFO [ai_music_gen.load_trained_model:128] Loading model from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-20 10:37:39] WARNING [ai_music_gen.load_trained_model:144] Could not load using TensorFlow load_model (file may be pickled): Unable to open file (file signature not found)
+[2026-05-20 10:37:39] INFO [ai_music_gen.load_trained_model:145] Attempting to load file as Pickled Simulated Model...
+[2026-05-20 10:37:39] INFO [ai_music_gen.load_trained_model:150] Simulated Model loaded successfully from pickle.
+[2026-05-20 10:37:39] INFO [ai_music_gen.generate_notes_list:50] No seed sequence provided. Loading random seed from training notes cache...
+[2026-05-20 10:37:39] INFO [ai_music_gen.generate_notes_list:65] Generating 200 notes using temperature 0.8...
+[2026-05-20 10:37:39] INFO [ai_music_gen.notes_to_midi:113] Converting notes list (length 200) to MIDI stream at 120 BPM...
+[2026-05-20 10:37:39] INFO [ai_music_gen.notes_to_midi:161] Successfully saved MIDI to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_01.mid
+[2026-05-20 10:37:39] INFO [ai_music_gen.plot_piano_roll:22] Generating piano-roll visualization for C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_01.mid...
+[2026-05-20 10:37:43] INFO [ai_music_gen.plot_piano_roll:127] Saved piano-roll visualization to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_01.png
+[2026-05-20 10:55:49] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:55:49] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:55:55] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:55:55] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:56:45] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:56:45] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:56:51] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:56:51] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:58:47] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:58:47] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 10:58:55] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 10:58:55] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:18:03] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:18:03] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:18:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:19:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:20:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:26] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:21:26] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:21:35] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:21:35] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:21:49] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:55] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:55] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:21:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:22:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:43] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:23:43] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:23:49] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:23:49] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:23:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:23:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:52] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:24:52] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:24:58] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:24:58] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:24:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:24:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:25:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:29:48] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:29:48] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:29:55] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-20 11:29:55] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:55] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:30:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:19] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:19] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:22] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:22] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:25] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:25] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:28] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:28] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:31] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:34] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:37] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:37] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:40] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:40] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:43] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:43] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:46] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:46] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:49] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:49] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:55] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:55] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:31:58] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:04] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:10] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:13] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:16] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:19] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-20 11:32:19] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:26] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-27 12:32:26] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-27 12:32:31] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-27 12:32:31] INFO [ai_music_gen.populate_sample_dataset:73] Using 15 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-27 12:32:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:52] INFO [ai_music_gen.load_trained_model:128] Loading model from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-27 12:32:52] WARNING [ai_music_gen.load_trained_model:144] Could not load using TensorFlow load_model (file may be pickled): Unable to open file (file signature not found)
+[2026-05-27 12:32:52] INFO [ai_music_gen.load_trained_model:145] Attempting to load file as Pickled Simulated Model...
+[2026-05-27 12:32:52] INFO [ai_music_gen.load_trained_model:150] Simulated Model loaded successfully from pickle.
+[2026-05-27 12:32:52] INFO [ai_music_gen.generate_notes_list:50] No seed sequence provided. Loading random seed from training notes cache...
+[2026-05-27 12:32:52] INFO [ai_music_gen.generate_notes_list:65] Generating 200 notes using temperature 0.8...
+[2026-05-27 12:32:52] INFO [ai_music_gen.notes_to_midi:113] Converting notes list (length 200) to MIDI stream at 120 BPM...
+[2026-05-27 12:32:52] INFO [ai_music_gen.notes_to_midi:161] Successfully saved MIDI to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_02.mid
+[2026-05-27 12:32:52] INFO [ai_music_gen.plot_piano_roll:22] Generating piano-roll visualization for C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_02.mid...
+[2026-05-27 12:32:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:54] INFO [ai_music_gen.plot_piano_roll:127] Saved piano-roll visualization to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_02.png
+[2026-05-27 12:32:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:32:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:01] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:16] INFO [ai_music_gen.load_trained_model:128] Loading model from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\models\lstm_music_model.keras
+[2026-05-27 12:33:16] WARNING [ai_music_gen.load_trained_model:144] Could not load using TensorFlow load_model (file may be pickled): Unable to open file (file signature not found)
+[2026-05-27 12:33:16] INFO [ai_music_gen.load_trained_model:145] Attempting to load file as Pickled Simulated Model...
+[2026-05-27 12:33:16] INFO [ai_music_gen.load_trained_model:150] Simulated Model loaded successfully from pickle.
+[2026-05-27 12:33:16] INFO [ai_music_gen.generate_notes_list:50] No seed sequence provided. Loading random seed from training notes cache...
+[2026-05-27 12:33:16] INFO [ai_music_gen.generate_notes_list:65] Generating 200 notes using temperature 0.8...
+[2026-05-27 12:33:16] INFO [ai_music_gen.notes_to_midi:113] Converting notes list (length 200) to MIDI stream at 120 BPM...
+[2026-05-27 12:33:16] INFO [ai_music_gen.notes_to_midi:161] Successfully saved MIDI to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_03.mid
+[2026-05-27 12:33:16] INFO [ai_music_gen.plot_piano_roll:22] Generating piano-roll visualization for C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_03.mid...
+[2026-05-27 12:33:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:22] INFO [ai_music_gen.plot_piano_roll:127] Saved piano-roll visualization to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\outputs\generated_music_03.png
+[2026-05-27 12:33:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:49] INFO [ai_music_gen.upload_midi:280] Uploaded dataset file saved to: C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw\generated_music_03.mid
+[2026-05-27 12:33:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:52] INFO [ai_music_gen.run_background_train:78] Background training thread started.
+[2026-05-27 12:33:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:52] INFO [ai_music_gen.populate_sample_dataset:73] Using 16 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-27 12:33:52] INFO [ai_music_gen.parse_midi_dataset:60] Loading notes cache from C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\processed\notes_processed.pkl
+[2026-05-27 12:33:52] INFO [ai_music_gen.prepare_sequences:52] Created 445 input-output training patterns.
+[2026-05-27 12:33:52] INFO [ai_music_gen.prepare_sequences:62] Network input shape: (445, 64, 1)
+[2026-05-27 12:33:52] INFO [ai_music_gen.prepare_sequences:63] Network output shape: (445, 29)
+[2026-05-27 12:33:52] INFO [ai_music_gen.save_pickle:115] Saved cache to C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\processed\vocab_mapping.pkl
+[2026-05-27 12:33:52] INFO [ai_music_gen.run_background_train:151] TensorFlow available. Building Keras LSTM model...
+[2026-05-27 12:33:52] INFO [ai_music_gen.create_lstm_model:88] Creating LSTM model. Input shape: (64, 1), Vocabulary size: 29
+[2026-05-27 12:33:52] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:58] INFO [ai_music_gen.create_lstm_model:117] LSTM Model compiled successfully.
+[2026-05-27 12:33:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:33:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:38] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-05-27 12:34:38] INFO [ai_music_gen.populate_sample_dataset:73] Using 16 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:34:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:51] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:57] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:35:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:00] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:09] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:12] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:15] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:17] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:18] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:20] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:21] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:23] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:24] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:26] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:27] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:29] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:30] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:32] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:33] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:35] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:36] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:38] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-05-27 12:36:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:23:57] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-06-07 13:23:57] INFO [ai_music_gen.populate_sample_dataset:73] Using 16 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-06-07 13:24:02] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-06-07 13:24:02] INFO [ai_music_gen.populate_sample_dataset:73] Using 16 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-06-07 13:24:07] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:08] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:11] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:14] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:36] INFO [ai_music_gen.run_webserver:31] Initializing Flask Web Server environment...
+[2026-06-07 13:24:36] INFO [ai_music_gen.populate_sample_dataset:73] Using 16 existing MIDI files found in C:\Users\sushm\.gemini\antigravity\scratch\ai-music-generator\data\raw
+[2026-06-07 13:24:39] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:40] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:41] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:42] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:44] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:45] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:47] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:48] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:50] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:53] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:54] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:56] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:24:59] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:02] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:03] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:05] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
+[2026-06-07 13:25:06] INFO [ai_music_gen.check_gpu:53] No GPU detected. TensorFlow will run on CPU.
