@@ -158,7 +158,7 @@ Music generation follows an autoregressive pipeline:
    - $T > 1.0$: Flattens distribution; allows lower probability, "creative" choices.
 4. **Shifting Window**: The selected note is appended to the sequence, the oldest note is discarded, and the new sequence is fed back to the network.
 
----
+
 
 ## 🛠️ Performance Optimizations & Modern Best Practices
 
@@ -167,3 +167,4 @@ Music generation follows an autoregressive pipeline:
 - **Async Web Worker Training**: Training runs in a background thread to prevent blocking Flask's event loop, reporting statistics via a custom callback directly back to the UI.
 - **Web Audio Synthesis**: Browser audio synthesis uses the client-side Web Audio API (via Tone.js) and maps MIDI notes to synthesizer frequencies on the fly, keeping the backend lightweight and fast.
 - **Clean Responsive Rendering**: The piano-roll is dynamically scaled to the client window sizes, utilizing `requestAnimationFrame` for stutter-free playhead animations.
+user can add their own downloaded vesion to create a new one.
